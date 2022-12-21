@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".LoginFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                android:id="@+id/app_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/app_name"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:paddingTop="70dp"
+                android:paddingBottom="70dp" />
+
+            <EditText
+                android:id="@+id/editTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:paddingBottom="20dp"/>
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:paddingBottom="20dp"/>
+
+            <Button
+                android:id="@+id/btnLogin"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LOGIN"
+                android:textSize="20sp"
+                android:paddingTop="10dp"
+                android:paddingBottom="10dp"
+                android:layout_marginTop="20dp"/>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+
+
+</layout>
