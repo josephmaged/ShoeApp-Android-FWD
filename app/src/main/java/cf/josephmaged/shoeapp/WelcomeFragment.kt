@@ -1,11 +1,14 @@
 package cf.josephmaged.shoeapp
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import cf.josephmaged.shoeapp.databinding.FragmentWelcomeBinding
 
 
@@ -19,7 +22,11 @@ class WelcomeFragment : Fragment() {
         inflater,
         R.layout.fragment_welcome, container,false
     )
+        binding.apply {
+            nextButton.setOnClickListener { view: View ->
+                    Navigation.findNavController(view).navigate(R.id.action_welcomeFragment_to_instructionsFragment)
+            }
+        }
         return binding.root
     }
-
 }

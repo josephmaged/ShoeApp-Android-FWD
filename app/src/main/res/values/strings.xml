@@ -3,4 +3,6 @@
     <string name="hello_blank_fragment">Hello Blank Fragment</string>
     <string name="password">Password</string>
     <string name="email">Email</string>
+    <string name="welcome">Live Your Perfect</string>
+    <string name="welcome_body"><![CDATA[Smart, gorgeous & fashionable collection makes you cool]]></string>
 </resources>
