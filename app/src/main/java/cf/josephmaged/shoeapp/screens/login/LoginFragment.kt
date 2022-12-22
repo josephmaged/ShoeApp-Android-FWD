@@ -1,4 +1,4 @@
-package cf.josephmaged.shoeapp
+package cf.josephmaged.shoeapp.screens.login
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
+import cf.josephmaged.shoeapp.R
 import cf.josephmaged.shoeapp.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {

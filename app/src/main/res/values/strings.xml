@@ -5,4 +5,7 @@
     <string name="email">Email</string>
     <string name="welcome">Live Your Perfect</string>
     <string name="welcome_body"><![CDATA[Smart, gorgeous & fashionable collection makes you cool]]></string>
+    <string name="instruction">Instructions Manual</string>
+    <string name="instruction_body">You Can add Shoes Details</string>
+    <string name="shoe_list">Shoe List</string>
 </resources>
