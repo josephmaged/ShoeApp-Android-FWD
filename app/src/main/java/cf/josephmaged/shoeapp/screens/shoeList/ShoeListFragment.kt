@@ -24,7 +24,7 @@ import cf.josephmaged.shoeapp.screens.shoeDetails.ShoeDetailsViewModel
 class ShoeListFragment : Fragment(), MenuProvider {
 
     private lateinit var binding: FragmentShoeListBinding
-    private val viewModel: ShoeDetailsViewModel by activityViewModels()
+    private val viewModel: ShoeViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -35,9 +35,13 @@ class ShoeListFragment : Fragment(), MenuProvider {
             R.layout.fragment_shoe_list, container, false
         )
 
-        viewModel.shoesList.observe(viewLifecycleOwner, Observer { shoeList ->
+        binding.viewModel = viewModel
+        setHasOptionsMenu(true)
+
+        viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
             for (shoe in shoeList) {
-                val itemBinding = ShoeItemBinding.inflate(layoutInflater)
+                val itemBinding: ShoeItemBinding =
+                    DataBindingUtil.inflate(layoutInflater, R.layout.shoe_item, container, false)
                 itemBinding.shoeItem = shoe
                 binding.parentLayout.addView(itemBinding.root)
             }
@@ -52,16 +56,6 @@ class ShoeListFragment : Fragment(), MenuProvider {
         return binding.root
     }
 
-    override fun onResume() {
-        super.onResume()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.show()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Shoe List"
-    }
-
-    override fun onPause() {
-        super.onPause()
-        (activity as AppCompatActivity?)!!.supportActionBar!!.hide()
-    }
 
     override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
         menuInflater.inflate(R.menu.appbar_menu, menu)
@@ -69,9 +63,10 @@ class ShoeListFragment : Fragment(), MenuProvider {
 
 
     override fun onMenuItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(
+        NavigationUI.onNavDestinationSelected(
             item,
             requireView().findNavController()
         )
+        return true
     }
 }

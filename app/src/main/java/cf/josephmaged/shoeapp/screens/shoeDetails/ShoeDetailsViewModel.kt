@@ -7,15 +7,12 @@ import cf.josephmaged.shoeapp.models.Shoe
 
 class ShoeDetailsViewModel : ViewModel() {
 
-    val _shoes = MutableLiveData<MutableList<Shoe>>()
-    val shoesList: LiveData<MutableList<Shoe>>
-    get() = _shoes
+    val shoeName = MutableLiveData<String>()
+    val shoeSize = MutableLiveData<String>()
+    val shoeCompany = MutableLiveData<String>()
+    val shoeDescription = MutableLiveData<String>()
 
-    fun addShoe(shoe: Shoe){
-        if (_shoes.value == null){
-            _shoes.value = mutableListOf(shoe)
-        }else {
-            _shoes.value?.add(shoe)
-        }
+    fun addNewShoe() : Shoe{
+        return Shoe(shoeName.value?: "", shoeSize.value?: "", shoeCompany.value?: "", shoeDescription.value?: "")
     }
 }

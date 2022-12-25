@@ -20,10 +20,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="40dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:text="@={shoeItem.name}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="shoe name"/>
 
         <TextView
             android:id="@+id/shoesize_txt"
@@ -32,7 +33,8 @@
             android:layout_marginStart="150dp"
             android:text="@={shoeItem.size}"
             app:layout_constraintStart_toEndOf="@+id/shoename_txt"
-            app:layout_constraintTop_toTopOf="@+id/shoename_txt" />
+            app:layout_constraintTop_toTopOf="@+id/shoename_txt"
+            tools:text="shoe name"/>
 
         <TextView
             android:id="@+id/shoecompany_txt"
@@ -42,7 +44,8 @@
             android:layout_marginTop="20dp"
             android:text="@={shoeItem.company}"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoename_txt" />
+            app:layout_constraintTop_toBottomOf="@+id/shoename_txt"
+            tools:text="shoe name"/>
 
         <TextView
             android:id="@+id/shoedesc_txt"
@@ -51,6 +54,17 @@
             android:layout_marginStart="150dp"
             android:text="@={shoeItem.description}"
             app:layout_constraintStart_toEndOf="@+id/shoecompany_txt"
-            app:layout_constraintTop_toTopOf="@+id/shoecompany_txt" />
+            app:layout_constraintTop_toTopOf="@+id/shoecompany_txt"
+            tools:text="shoe name"/>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="15dp"
+            android:background="?android:attr/listDivider"
+            app:layout_constraintTop_toBottomOf="@+id/shoedesc_txt"
+            tools:layout_editor_absoluteX="0dp" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".screens.shoeDetails.ShoeDetailsFragment">
 
+    <data>
+        <variable
+            name="viewModel"
+            type="cf.josephmaged.shoeapp.screens.shoeDetails.ShoeDetailsViewModel" />
+    </data>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -26,7 +31,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:paddingBottom="20dp" />
+                android:paddingBottom="20dp"
+                android:text="@={viewModel.shoeName}"/>
 
             <TextView
                 android:id="@+id/textView5"
@@ -42,7 +48,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:paddingBottom="20dp" />
+                android:paddingBottom="20dp"
+                android:text="@={viewModel.shoeCompany}"/>
 
             <TextView
                 android:id="@+id/textView6"
@@ -58,7 +65,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:paddingBottom="20dp" />
+                android:paddingBottom="20dp"
+                android:text="@={viewModel.shoeSize}"/>
 
             <TextView
                 android:id="@+id/textView7"
@@ -74,7 +82,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textMultiLine"
-                android:paddingBottom="20dp" />
+                android:paddingBottom="20dp"
+                android:text="@={viewModel.shoeDescription}"/>
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
