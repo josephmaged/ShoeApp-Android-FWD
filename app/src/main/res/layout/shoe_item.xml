@@ -10,6 +10,7 @@
             type="cf.josephmaged.shoeapp.models.Shoe" />
     </data>
 
+    <!--used Coordinator to organize elements depending on each other-->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/item_layout"
         android:layout_width="wrap_content"

@@ -11,14 +11,18 @@
             type="cf.josephmaged.shoeapp.screens.shoeList.ShoeViewModel" />
     </data>
 
+    <!--used Coordinator to set floatingActionButton in it's own default
+     position-->
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--i used scrollview to avoid ui error *or issue when keyboard open*-->
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+            <!--used linearlayout to easy organize elements-->
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

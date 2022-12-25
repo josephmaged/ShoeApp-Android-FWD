@@ -8,10 +8,13 @@
             name="viewModel"
             type="cf.josephmaged.shoeapp.screens.shoeDetails.ShoeDetailsViewModel" />
     </data>
+
+    <!--i used scrollview to avoid ui error *or issue when keyboard open*-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <!--used linearlayout to easy organize elements-->
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
