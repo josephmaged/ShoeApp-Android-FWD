@@ -36,7 +36,6 @@ class ShoeListFragment : Fragment(), MenuProvider {
         )
 
         binding.viewModel = viewModel
-        setHasOptionsMenu(true)
 
         viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
             for (shoe in shoeList) {
@@ -47,12 +46,14 @@ class ShoeListFragment : Fragment(), MenuProvider {
             }
         })
 
+        val menuHost: MenuHost = requireActivity()
+        menuHost.addMenuProvider(this, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
         binding.apply {
             addShoe.setOnClickListener { view: View ->
                 Navigation.findNavController(view).navigate(R.id.action_shoeListFragment_to_shoeDetailsFragment)
             }
         }
-
         return binding.root
     }
 
@@ -63,10 +64,9 @@ class ShoeListFragment : Fragment(), MenuProvider {
 
 
     override fun onMenuItemSelected(item: MenuItem): Boolean {
-        NavigationUI.onNavDestinationSelected(
+        return NavigationUI.onNavDestinationSelected(
             item,
             requireView().findNavController()
         )
-        return true
     }
 }
