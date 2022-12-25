@@ -13,6 +13,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import cf.josephmaged.shoeapp.R
 import cf.josephmaged.shoeapp.databinding.FragmentShoeListBinding
@@ -64,9 +65,12 @@ class ShoeListFragment : Fragment(), MenuProvider {
 
 
     override fun onMenuItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(
-            item,
-            requireView().findNavController()
-        )
+         findNavController().navigate(R.id.action_shoeListFragment_to_loginFragment)
+        return true
+    }
+
+    override fun onResume() {
+        super.onResume()
+        (activity as AppCompatActivity?)!!.supportActionBar!!.title = "Shoe List"
     }
 }
